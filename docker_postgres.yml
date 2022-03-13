@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  postgres: 
+    image: postgres:14.0
+    container_name: <CONTAINER_NAME>
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: root 
+      POSTGRES_PASSWORD: <POSTGRES_PASSWORD>
+    volumes:
+      - type: bind
+        source: ./docker_postgres_init.sql
+        target: /docker-entrypoint-initdb.d/docker_postgres_init.sql
+      - type: bind
+        source: ./backups
+        target: /var/backups 
