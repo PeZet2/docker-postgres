@@ -1,13 +1,15 @@
 ## docker-postgres
 
-Scripts for postgres database initialization.
-Content of configuration files is entirely modifiable by the user. For using default configuration, some elements below still need to be replaced.
+Scripts for postgres database initialization on docker.
+Content of configuration files is entirely modifiable by the user. Elements inside brackets need to be replaced for individual case.
 <br>
 
 **docker_postgres.yml**
 Yml configuration file for docker-compose. 
 ```yaml
 container_name: <CONTAINER_NAME>
+...
+- <PORT_NUMBER>:5432
 ...
 POSTGRES_PASSWORD: <POSTGRES_PASSWORD>
 ```
